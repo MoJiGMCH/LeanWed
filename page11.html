@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>บทที่ 1 : Canva คืออะไร</title>
+    <link rel="stylesheet" href="Canva3.css">
+</head>
+
+<body class="lesson">
+
+<header>
+    <h1>บทที่ 1 : Canva คืออะไร</h1>
+</header>
+
+<div class="container">
+
+<!-- ====== Section 1 ====== -->
+<section class="box">
+    <h2>ความหมายของ Canva</h2>
+
+    <p>
+        Canva คือ แพลตฟอร์มออกแบบกราฟิกออนไลน์ ที่ช่วยให้ผู้ใช้งานสามารถสร้างสรรค์งานออกแบบได้อย่างง่ายดาย โดยไม่จำเป็นต้องมีพื้นฐานด้านการออกแบบมาก่อน สามารถใช้งานได้ทั้งบนเว็บไซต์และแอปพลิเคชันบนโทรศัพท์มือถือ
+
+Canva มี เทมเพลตสำเร็จรูป ให้เลือกใช้งานหลากหลาย เช่น โปสเตอร์ งานนำเสนอ (Presentation) โลโก้ ใบปลิว นามบัตร และโพสต์สำหรับโซเชียลมีเดีย ผู้ใช้สามารถเลือกเทมเพลตแล้วปรับแก้ไขข้อความ สี รูปภาพ และองค์ประกอบต่าง ๆ ได้ตามต้องการ
+
+นอกจากนี้ Canva ยังมีเครื่องมือที่ใช้งานง่าย เช่น การลากและวาง (Drag & Drop) ฟอนต์และรูปภาพจำนวนมาก รวมถึงไอคอนและกราฟิกที่ช่วยให้งานออกแบบดูสวยงามและเป็นมืออาชีพ เหมาะสำหรับนักเรียน นักศึกษา ครู และบุคคลทั่วไปที่ต้องการสร้างงานออกแบบได้อย่างรวดเร็วและสะดวก
+    </p>
+
+    <audio id="audio-1" src="audio/lesson1-meaning.wav"></audio>
+
+    <button onclick="toggleAudio('audio-1', this)">
+        ▶️ ฟังเสียง
+    </button>
+</section>
+
+<!-- ====== Section 2 ====== -->
+<section class="box canva1-row">
+    <h3>Canva ใช้ทำอะไรได้บ้าง</h3>
+
+    <div class="canva1-flex">
+        <div class="canva1-text">
+            <ul>
+                <li>ออกแบบโลโก้ นามบัตร</li>
+                <li>โปสเตอร์ ใบปลิว แบนเนอร์</li>
+                <li>งานนำเสนอ (Presentation)</li>
+                <li>สื่อการเรียนการสอน</li>
+                <li>โพสต์โซเชียลมีเดีย</li>
+            </ul>
+        </div>
+
+        <div class="canva1-image">
+            <img src="image/canva logo.jpg" alt="โลโก้ Canva">
+        </div>
+    </div>
+
+    <audio id="audio-2" src="audio/lesson1-use.wav"></audio>
+
+    <button onclick="toggleAudio('audio-2', this)">
+        ▶️ ฟังเสียง
+    </button>
+</section>
+
+<!-- ====== Section 3 ====== -->
+<section class="box canva1-row">
+    <h3>ข้อดีของ Canva</h3>
+
+    <div class="canva1-flex">
+        <div class="canva1-text">
+            <ul>
+                <li>ใช้งานง่าย เหมาะสำหรับผู้เริ่มต้น</li>
+                <li>มีเทมเพลตให้เลือกใช้งานจำนวนมาก</li>
+                <li>สามารถใช้งานได้ฟรี</li>
+                <li>รองรับทั้งคอมพิวเตอร์และมือถือ</li>
+            </ul>
+        </div>
+
+        <div class="canva1-image">
+            <img src="image/canva pro.jpg" alt="Canva Pro">
+        </div>
+    </div>
+
+    <audio id="audio-3" src="audio/lesson1-advantage.wav"></audio>
+
+    <button onclick="toggleAudio('audio-3', this)">
+        ▶️ ฟังเสียง
+    </button>
+</section>
+
+<!-- ====== ปุ่มนำทาง ====== -->
+<div style="text-align:center;">
+    <a href="Canva.html" class="back-home"> กลับหน้าหลัก</a>
+    <a href="page22.html" class="back-btn">บทที่ 2 →</a>
+</div>
+
+</div>
+
+<!-- ====== JavaScript กลาง (ใช้ร่วมทุก section) ====== -->
+<script>
+function toggleAudio(audioId, btn) {
+    const audio = document.getElementById(audioId);
+
+    // หยุดเสียงอื่นทั้งหมด
+    document.querySelectorAll("audio").forEach(a => {
+        if (a !== audio) {
+            a.pause();
+            a.currentTime = 0;
+        }
+    });
+
+    if (audio.paused) {
+        audio.play();
+        btn.innerText = "⏸ หยุดเสียง";
+    } else {
+        audio.pause();
+        audio.currentTime = 0;
+        btn.innerText = "▶️ ฟังเสียง";
+    }
+
+    audio.onended = () => {
+        btn.innerText = "▶️ ฟังเสียง";
+    };
+}
+</script>
+
+</body>
+</html>

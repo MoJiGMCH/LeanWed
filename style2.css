@@ -1,0 +1,11 @@
+body {
+    font-family: 'Kanit', sans-serif;
+}
+
+h1, h2, h5 {
+    font-weight: bold;
+}
+.card img {
+    height: 250px;
+    object-fit: cover;
+}
